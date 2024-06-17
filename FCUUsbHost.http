@@ -1,0 +1,9 @@
+@FCUUsbSerivice_HostAddress = http://pi5.local:5279
+
+GET {{FCUUsbSerivice_HostAddress}}/usb/
+Accept: application/json
+
+GET {{FCUUsbSerivice_HostAddress}}//simcomdevices/
+Accept: application/json
+
+###

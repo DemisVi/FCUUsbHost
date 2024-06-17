@@ -1,0 +1,3 @@
+[submodule "FCUUsbService"]
+	path = FCUUsbService
+	url = https://github.com/DemisVi/FCUUsbService.git

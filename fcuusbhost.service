@@ -1,0 +1,9 @@
+[Unit]
+Description=FCU Usb Service
+ 
+[Service]
+Type=notify
+ExecStart=/home/demis/FCUUsbHost
+ 
+[Install]
+WantedBy=multi-user.target
