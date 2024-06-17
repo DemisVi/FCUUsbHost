@@ -2,7 +2,7 @@
 Description=FCU Usb Service
  
 [Service]
-Type=notify
+WorkingDirectory=/home/demis/FCUUsbService/
 ExecStart=/home/demis/FCUUsbHost
  
 [Install]
