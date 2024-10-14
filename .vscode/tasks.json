@@ -6,7 +6,7 @@
             "command": "dotnet",
             "type": "process",
             "args": [
-                "build",
+                "build", "--no-restore",
                 "${workspaceFolder}/FCUUsbHost.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
@@ -23,6 +23,7 @@
             "type": "process",
             "args": [
                 "publish",
+                // "--no-restore",
                 "${workspaceFolder}/FCUUsbHost.csproj",
                 "--sc=false",
                 "/property:Configuration=Release",
@@ -30,7 +31,7 @@
                 "/property:PublishSingleFile=true",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign",
-                "/property:OutDir=~/FCUUsbService"
+                "/property:OutDir=${workspaceFolder}/../../FCUUsbService"
             ],
             "problemMatcher": "$msCompile"
         },

@@ -1,5 +1,8 @@
 using System;
 using FCUUsbService.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +28,7 @@ app.MapGet("/simcomdevices", () =>
     var provider = new SimComDeviceProvider();
     return provider.GetSimComDevices();
 })
-.WithName("FCUSimComDevices")
+.WithName("FCU SimCom Devices")
 .WithOpenApi();
 
 app.MapGet("/usb", () =>
@@ -33,7 +36,15 @@ app.MapGet("/usb", () =>
     var provider = new UsbConfigurationProvider();
     return provider.GetUsbConfiguration();
 })
-.WithName("FCUUsbDevices")
+.WithName("FCU Usb Devices")
+.WithOpenApi();
+
+app.MapGet("/dhcpclients", () =>
+{
+    var provider = new DhcpClientProvider();
+    return provider.GetDhcpClients();
+})
+.WithName("Dhcp Clients")
 .WithOpenApi();
 
 app.Run();
